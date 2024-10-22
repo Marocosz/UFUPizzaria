@@ -1,7 +1,6 @@
 public class PizzariaUFU {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
         
         
         Pedido p1 = new Pedido(1, 2, 2, 3);

@@ -2,7 +2,7 @@ public class Equipamento {
 
     public String nome;
     public boolean Status;
-    public int Capacidade;
+    public int Capacidade = 6;
     public int CapacidadeDisponivel;
 
     public Equipamento(String nome) {
@@ -13,6 +13,11 @@ public class Equipamento {
     public void ligar() {
         this.Status = true;
         System.out.println(this.nome + " Está ligado");
+    }
+
+    public void desligar() {
+        this.Status = false;
+        System.out.println(this.nome + " Está desligado");
     }
 
 }
