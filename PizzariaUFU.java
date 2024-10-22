@@ -15,6 +15,10 @@ public class PizzariaUFU {
         p1.pizzasPedidas();
         p2.pizzasPedidas();
         p3.pizzasPedidas();
+
+        Equipamento eq1 = new Equipamento("Eq1");
+
+        eq1.ligar();
         
     }
 }

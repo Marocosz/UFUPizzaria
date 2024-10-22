@@ -34,6 +34,7 @@ public class Pedido {
         }
         
         System.out.println("Pizzas totais: " + this.getQuantidade());
+        
         System.out.println("========================================");
     }
     
