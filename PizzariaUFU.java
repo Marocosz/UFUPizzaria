@@ -24,6 +24,10 @@ public class PizzariaUFU {
         Ingredientes ing3 = new Ingredientes("Queijo Mussarela", 16);
 
         ing1.mostrarEstoque();
+        Funcionario Marcos = new Funcionario("Marcos",001,"123.456.789-10","novato");
+
+        Marcos.mostrarCpf();
         
     }
+
 }

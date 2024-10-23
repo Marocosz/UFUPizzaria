@@ -2,11 +2,11 @@ public class Funcionario {
     
     private String nome;
     public int id;
-    private int cpf;
+    private String cpf;
     private String descriçao;
     
 
-    public Funcionario(String nome, int id, int cpf, String descriçao){
+    public Funcionario(String nome, int id, String cpf, String descriçao){
         this.nome = nome;
         this.id = id;
         this.cpf = cpf;
@@ -20,6 +20,13 @@ public class Funcionario {
 
     public void entregarPizza(){
         System.out.println(this.nome + "realizou a entrega");
+    
+    }
+    public String mostrarDescriçao(){
+        return this.descriçao;
+    
+    }
 
-
-    }}
+    public void mostrarCpf(){
+        System.out.println("O CPF é: "+this.cpf);
+}}
