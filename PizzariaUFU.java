@@ -18,6 +18,12 @@ public class PizzariaUFU {
         Equipamento eq1 = new Equipamento("Eq1");
 
         eq1.ligar();
+
+        Ingredientes ing1 = new Ingredientes("Batata", 10);
+        Ingredientes ing2 = new Ingredientes("Frango", 20);
+        Ingredientes ing3 = new Ingredientes("Queijo Mussarela", 16);
+
+        ing1.mostrarEstoque();
         
     }
 }
