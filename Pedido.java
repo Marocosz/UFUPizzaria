@@ -1,12 +1,12 @@
 public class Pedido {
     
     private static int contadorId = 0;
-    private int Id;
+    private int id;
     public int[] nPizzas;
     
     public Pedido (int... nPizzas) {
         contadorId++;
-        this.Id = contadorId;
+        this.id = contadorId;
         this.nPizzas = nPizzas;
         
     }
@@ -20,7 +20,7 @@ public class Pedido {
     }
     
     public int getId() {
-        return Id;
+        return id;
     }
     
     public void pizzasPedidas() {

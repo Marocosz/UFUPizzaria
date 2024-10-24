@@ -2,8 +2,8 @@ public class Equipamento {
 
     public String nome;
     public boolean Status;
-    public int Capacidade = 6;
-    public int CapacidadeDisponivel;
+    public int capacidade = 6;
+    public int capacidadeDisponivel;
 
     public Equipamento(String nome) {
         this.nome = nome;

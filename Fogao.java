@@ -6,7 +6,7 @@ public class Fogao extends Equipamento {
         super(nome);
     }
     
-    public void cozinhar(Ingrediente ingrediente, Funcionario ator) {
+    public void cozinhar(Ingredientes ingrediente, Funcionario ator) {
 
         
     }
