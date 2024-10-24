@@ -1,3 +1,5 @@
+
+
 public class PizzariaUFU {
 
     public static void main(String[] args) {
@@ -29,7 +31,7 @@ public class PizzariaUFU {
         Marcos.mostrarCpf();
         */
 
-        Ajudante ajudante1 = new Ajudante("Marcelo Freitas", 112, "123.123.133-23", "Ajudante novato, chegou atrasdo dia 12/12");
+        /*Ajudante ajudante1 = new Ajudante("Marcelo Freitas", 112, "123.123.133-23", "Ajudante novato, chegou atrasdo dia 12/12");
     
         ajudante1.mostrarXp();
         ajudante1.entregarPizza();
@@ -37,6 +39,26 @@ public class PizzariaUFU {
         ajudante1.mostrarXp();
         ajudante1.lavarLouca();
         ajudante1.mostrarXp();
-    }   
+*/
+        try {
+            // Tentando criar um Pizzaiolo com ID inválido (deve lançar IdPizzaioloInvalidoException)
+            Funcionario pizzaiolo = new Pizzaiolo("Carlos", 105, "123.456.789-10", "Pizzaiolo experiente");
+        } catch (IdPizzaioloInvalidaException e) {
+            System.out.println("Erro: " + e.getMessage());
+        } catch (IdAjudanteInvalidaException e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
 
+        try {
+            // Tentando criar um Ajudante com ID inválido (deve lançar IdAjudanteInvalidoException)
+            Funcionario ajudante = new Ajudante("João", 105, "987.654.321-00", "Ajudante com XP alto");
+        } catch (IdPizzaioloInvalidaException e) {
+            System.out.println("Erro: " + e.getMessage());
+        } catch (IdAjudanteInvalidaException e) {
+            System.out.println("Erro: " + e.getMessage());
+        }
+    }
 }
+
+
+

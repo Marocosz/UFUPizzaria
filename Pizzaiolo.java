@@ -1,6 +1,6 @@
 public class Pizzaiolo extends Funcionario {
 
-    public Pizzaiolo(String nome, int id, String cpf, String descricao) {
+    public Pizzaiolo(String nome, int id, String cpf, String descricao) throws IdPizzaioloInvalidaException, IdAjudanteInvalidaException {
         super(nome, id, cpf, descricao);       
 
     }

@@ -2,7 +2,7 @@ public class Ajudante extends Funcionario {
 
     public int xp;
 
-    public Ajudante(String nome, int id, String cpf, String descricao) {
+    public Ajudante(String nome, int id, String cpf, String descricao) throws IdPizzaioloInvalidaException, IdAjudanteInvalidaException {
         super(nome, id, cpf, descricao);
 
     }
