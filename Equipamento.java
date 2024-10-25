@@ -20,4 +20,8 @@ public class Equipamento {
         System.out.println(this.nome + " Está desligado");
     }
 
+    public int getCapacidadeDisponivel() {
+        return capacidadeDisponivel;
+    }
+
 }
