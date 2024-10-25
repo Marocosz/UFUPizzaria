@@ -36,7 +36,6 @@ public class Funcionario {
         System.out.println(this.nome + " retirou do forno");
 
         // If para determinar se a classe for ajudante, ganhará pontuação em seu XP
-        // ============================ Precisa verificar erro
         if(this instanceof Ajudante) {
             ((Ajudante) this).xp += ((Ajudante) this).gerenciarXp(10);
         }
@@ -46,7 +45,6 @@ public class Funcionario {
         System.out.println(this.nome + " realizou a entrega");
 
         // If para determinar se a classe for ajudante, ganhará pontuação em seu XP
-        // ============================ Precisa verificar erro
         if(this instanceof Ajudante) {
             ((Ajudante) this).xp += ((Ajudante) this).gerenciarXp(10);
         }

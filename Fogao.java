@@ -8,4 +8,9 @@ public class Fogao extends Equipamento {
 
         
     }
+
+    public void fritar(Ingredientes ingrediente, Funcionario ator) {
+
+        
+    }
 }

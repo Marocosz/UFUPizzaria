@@ -24,4 +24,9 @@ public class Equipamento {
         return capacidadeDisponivel;
     }
 
+    public void setCapacidadeDisponivel(int n) {
+
+        
+    }
+
 }
