@@ -10,20 +10,24 @@ public class Equipamento {
 
     }
     
+
     public void ligar() {
         this.Status = true;
         System.out.println(this.nome + " Está ligado");
     }
+
 
     public void desligar() {
         this.Status = false;
         System.out.println(this.nome + " Está desligado");
     }
 
+
     public int getCapacidadeDisponivel() {
         return capacidadeDisponivel;
     }
 
+    
     public void setCapacidadeDisponivel(int n) {
 
         

@@ -14,6 +14,7 @@ public class Ingredientes {
 
     }
 
+    
     // Método para mostrar o estoque
     public void mostrarEstoque() {
         for (Object[] ingrediente : vIngredientes) {  // Fazendo casting para Object[]

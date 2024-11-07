@@ -31,10 +31,12 @@ public class Funcionario {
         this.cpf = cpf;
         this.descricao = descriçao;
     }
+    
 
     public void retirarPizzaForno(Pedido pedido){
         System.out.println(this.nome + " retirou do forno a pizza de:" +  pedido.getId());
-        
+        pedido.alocandoPizzas(1);
+
 
         // If para determinar se a classe for ajudante, ganhará pontuação em seu XP
         if(this instanceof Ajudante) {
@@ -42,8 +44,9 @@ public class Funcionario {
         }
     }
 
-    public void entregarPizza(){
-        System.out.println(this.nome + " realizou a entrega");
+
+    public void entregarPizza(Pedido pedido){
+        System.out.println(this.nome + " realizou a entrega do pedido: " + pedido.getId());
 
         // If para determinar se a classe for ajudante, ganhará pontuação em seu XP
         if(this instanceof Ajudante) {
@@ -51,9 +54,12 @@ public class Funcionario {
         }
     
     }
+
+
     public String mostrarDescriçao(){
         return this.descricao;
     }
+
 
     public void mostrarCpf(){
         System.out.println("O CPF de: " + this.nome + "é: " + this.cpf);

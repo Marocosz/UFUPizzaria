@@ -1,4 +1,5 @@
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class PizzariaUFU {
 
@@ -39,7 +40,7 @@ public class PizzariaUFU {
         ajudante1.mostrarXp();
         ajudante1.lavarLouca();
         ajudante1.mostrarXp();
-*/
+
         try {
             // Tentando criar um Pizzaiolo com ID inválido (deve lançar IdPizzaioloInvalidoException)
             Funcionario pizzaiolo = new Pizzaiolo("Carlos", 105, "123.456.789-10", "Pizzaiolo experiente");
@@ -57,6 +58,19 @@ public class PizzariaUFU {
         } catch (IdAjudanteInvalidaException e) {
             System.out.println("Erro: " + e.getMessage());
         }
+*/
+        Pedido p1 = new Pedido(2, 2, 2);
+
+        p1.pizzasPedidas();
+
+
+        Ingredientes ing1 = new Ingredientes("Frango", 300);        
+        Ingredientes ing2 = new Ingredientes("Queijo", 200);
+        ing1.mostrarEstoque();
+
+        
+        p1.printPizzasPedido();
+
     }
 }
 
