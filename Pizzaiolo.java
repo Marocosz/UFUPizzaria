@@ -5,11 +5,11 @@ public class Pizzaiolo extends Funcionario {
 
     }
 
-    public void prepararMassa(Pedido pedido) {
+    public void prepararMassa(Pizza pizza) {
         System.out.println(this.nome + " preparou a(s) massa(s) do pedido: " + pedido.getId());
     }
 
-    public void montarPizza(Pedido pedido) {
+    public void montarPizza(Pizza pizza) {
         System.out.println(this.nome + " montou a(s) pizzas(s) do pedido: " + pedido.getId());
     }
     
