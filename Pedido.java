@@ -48,18 +48,6 @@ public class Pedido {
     } 
 
 
-    public void alocandoPizzas(int index) {
-        int[] newNPizzas = new int[nPizzas.length - 1];
-        
-        for (int i = 0, j = 0; i < nPizzas.length; i++) {
-            if (i != index) {
-                newNPizzas[j++] = nPizzas[i];
-            }
-        }
-
-        nPizzas = newNPizzas;
-    }
-
     public void criandoPizzas() {
 
         List<Pizza> pizzasMetodo = new ArrayList<>();

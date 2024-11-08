@@ -35,7 +35,6 @@ public class Funcionario {
 
     public void retirarPizzaForno(Pedido pedido){
         System.out.println(this.nome + " retirou do forno a pizza de:" +  pedido.getId());
-        pedido.alocandoPizzas(1);
 
 
         // If para determinar se a classe for ajudante, ganhará pontuação em seu XP
