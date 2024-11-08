@@ -1,3 +1,4 @@
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,6 +73,67 @@ public class Estoque {
             System.out.println("Esse ingrediente não existe");
         }
     }
+
+    // Método para salvar o estoque em um arquivo CSV
+    public void salvarEstoque(String filePath) {
+
+        // Criando writer de arquivo
+        try (FileWriter writer = new FileWriter(filePath)) {
+
+            // Para cada item da ArrayList
+            for (Object[] ingrediente : vIngredientes) {
+
+                // escrever linha no arquivo
+                String linha = ingrediente[0] + "," + ingrediente[1] + "\n";
+                writer.write(linha);
+            }
+
+            // println verificando condição
+            System.out.println("Estoque salvo em arquivo CSV com sucesso!");
+
+        // Lançando erro IOExcpiton (Relacionado a operações de arquivos)
+        } catch (IOException e) {
+            System.out.println("Erro ao salvar o estoque: " + e.getMessage());
+        }
+    }
+
+
+    // Método para carregar o estoque de um arquivo CSV
+    public void carregarEstoque(String filePath) {
+        
+        // Limpar a lista antes de carregar novos dados
+        vIngredientes.clear(); 
+
+        // Criando reader de arquivo
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String linha;
+
+            // Enquanto existir linha
+            while ((linha = reader.readLine()) != null) {
+
+                // Fazendo separação dos dados
+                String[] dados = linha.split(",");
+                String nome = dados[0];
+                int quantidade = Integer.parseInt(dados[1]); // Convertendo string para int
+
+                // Alocando os dados na ArrayList
+                Object[] ingrediente = new Object[2];
+                ingrediente[0] = nome;
+                ingrediente[1] = quantidade;
+                vIngredientes.add(ingrediente);
+            }
+
+            // println verificando condição
+            System.out.println("Estoque carregado do arquivo CSV com sucesso!");
+
+        // Lançando possíveis erros
+        } catch (IOException e) {
+            System.out.println("Erro ao carregar o estoque: " + e.getMessage());
+        } catch (NumberFormatException e) {
+            System.out.println("Erro de formato nos dados do CSV: " + e.getMessage());
+        }
+    }
+    
 
     
 }
