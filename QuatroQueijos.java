@@ -1,10 +1,10 @@
 public class QuatroQueijos extends Pizza{
-    Ingredientes massa = new Ingredientes("massa", 350);
-    Ingredientes mussarela = new Ingredientes("mussarerla", 300);
-    Ingredientes molho = new Ingredientes("molho", 200);
-    Ingredientes catupiry = new Ingredientes("catupiry", 500);
-    Ingredientes parmesao = new Ingredientes("parmesao", 10);
-    Ingredientes gorgonzola = new Ingredientes("gorgonzola", 10);
+    Estoque massa = new Estoque("massa", 350);
+    Estoque mussarela = new Estoque("mussarerla", 300);
+    Estoque molho = new Estoque("molho", 200);
+    Estoque catupiry = new Estoque("catupiry", 500);
+    Estoque parmesao = new Estoque("parmesao", 10);
+    Estoque gorgonzola = new Estoque("gorgonzola", 10);
 
     public QuatroQueijos(int numPedido, int numPizza){
         super(numPedido, numPizza);

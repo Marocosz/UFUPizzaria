@@ -50,8 +50,6 @@ public class Pedido {
 
     public void criandoPizzas() {
 
-
-
         for(int i =0; i < nPizzas.length; i = i + 1){
             
 
@@ -68,9 +66,6 @@ public class Pedido {
             }
         }
 
-        
-
-
     }
 
     public void printPizzasPedido() {
@@ -79,6 +74,8 @@ public class Pedido {
 
         }
     }
+
+
 
 
 }

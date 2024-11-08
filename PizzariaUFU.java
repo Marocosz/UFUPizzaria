@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class PizzariaUFU {
 
     public static void main(String[] args) {
@@ -58,7 +55,7 @@ public class PizzariaUFU {
         } catch (IdAjudanteInvalidaException e) {
             System.out.println("Erro: " + e.getMessage());
         }
-*/
+
         Pedido p1 = new Pedido(2, 2, 2);
 
         p1.pizzasPedidas();
@@ -71,7 +68,24 @@ public class PizzariaUFU {
     
         p1.printPizzasPedido();
 
+        */
+
+
+        Estoque estoq = new Estoque();
+
+        estoq.addIngrediente("Batata", 20);
+        estoq.addIngrediente("Frango", 300);
+        estoq.mostrarEstoque();
+        estoq.addIngrediente("Batata", 20);
+        estoq.addIngrediente("Batata", 20);
+        estoq.mostrarEstoque();
+        estoq.usarIngrediente("Batata",60);
+        estoq.usarIngrediente("Batata",60);
+
+        estoq.usarIngrediente("Arrozzzzz", 100);
+
     }
+
 }
 
 

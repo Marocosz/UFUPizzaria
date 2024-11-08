@@ -5,14 +5,28 @@ public class Pizzaiolo extends Funcionario {
 
     }
 
-    
-    public void prepararMassa(Pedido pedido) {
-        System.out.println(this.nome + " preparou a(s) massa(s) do pedido: " + pedido.getId());
-    }
 
+    public void montarPizza(Pedido nPedido, int index) {
+        for (int i = 0; i < nPedido.pizzas.size(); i = i + 1) {
+            if (i == index) {
+                if (nPedido.pizzas.get(i).status == -1) {
+                    System.out.println("A pizza: " + nPedido.pizzas.get(i) + "do pedido: " + nPedido.getId() + "Está montada!");
+                    nPedido.pizzas.get(i).attStatus(0);
 
-    public void montarPizza(Pedido pedido) {
-        System.out.println(this.nome + " montou a(s) pizzas(s) do pedido: " + pedido.getId());
+                } else if (nPedido.pizzas.get(i).status == 0) {
+                    System.out.println("A pizza já está montada!");
+
+                } else if (nPedido.pizzas.get(i).status == 1) {
+                    System.out.println("A pizza já foi assada!");
+
+                } else if (nPedido.pizzas.get(i).status == 2) {
+                    System.out.println("A pizza já foi entregue!");
+                }
+
+            } else {
+                System.out.println("Não há essa quantidade de pizzas no " + nPedido.getId());
+            }
+        }
     }
     
 }

@@ -6,13 +6,14 @@ public class Fogao extends Equipamento {
     }
     
 
-    public void cozinhar(Ingredientes ingrediente, Funcionario ator) {
+    public void cozinhar(String ingrediente, Funcionario ator, Estoque estoque) {
+        estoque.usarIngrediente(ingrediente, capacidade);
 
         
     }
 
 
-    public void fritar(Ingredientes ingrediente, Funcionario ator) {
+    public void fritar(Estoque estoque, Funcionario ator) {
 
         
     }

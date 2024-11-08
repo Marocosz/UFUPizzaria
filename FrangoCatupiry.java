@@ -1,9 +1,11 @@
 public class FrangoCatupiry extends Pizza{
-    Ingredientes massa = new Ingredientes("massa", 350);
-    Ingredientes mussarela = new Ingredientes("mussarerla", 300);
-    Ingredientes molho = new Ingredientes("molho", 200);
-    Ingredientes frango = new Ingredientes("frango", 500);
-    Ingredientes catupiry = new Ingredientes("catupiry", 10);
+    Estoque massa = new Estoque("massa", 350);
+    Estoque mussarela = new Estoque("mussarerla", 300);
+    Estoque molho = new Estoque("molho", 200);
+    Estoque frango = new Estoque("frango", 500);
+    Estoque catupiry = new Estoque("catupiry", 10);
+
+
 
     public FrangoCatupiry(int numPedido, int numPizza){
         super(numPedido, numPizza);
@@ -17,5 +19,7 @@ public class FrangoCatupiry extends Pizza{
         ingredientes.add(mussarela);
         ingredientes.add(molho);
     }
+
+
 }
 
