@@ -2,9 +2,12 @@ public class PizzariaUFU {
 
     public static void main(String[] args) {
         
+        Funcionario pizzaiolo1 = null;
+        Funcionario ajudante1 = null;
+
 
         try {
-            Funcionario pizzaiolo1 = new Pizzaiolo("Carlos", 101, "123.456.789-10", "Pizzaiolo experiente");
+            pizzaiolo1 = new Pizzaiolo("Carlos", 201, "123.456.789-10", "Pizzaiolo experiente");
         } catch (IdPizzaioloInvalidaException e) {
             System.out.println("Erro: " + e.getMessage());
         } catch (IdAjudanteInvalidaException e) {
@@ -13,7 +16,7 @@ public class PizzariaUFU {
 
         try {
             // Tentando criar um Ajudante com ID inválido (deve lançar IdAjudanteInvalidoException)
-            Funcionario ajudante1 = new Ajudante("João", 201, "987.654.321-00", "Ajudante recém contratado");
+            ajudante1 = new Ajudante("João", 201, "987.654.321-00", "Ajudante recém contratado");
         } catch (IdPizzaioloInvalidaException e) {
             System.out.println("Erro: " + e.getMessage());
         } catch (IdAjudanteInvalidaException e) {
@@ -39,10 +42,11 @@ public class PizzariaUFU {
         forno1.ligar();
         forno2.ligar();
 
+
         // PROBLEMA EM CRIAR FUNCIONARIOS DEVIDO TRY E CATCH QUE É DEVIDO AOS ERROS EXCEPTION
         // pizzaiolo1.
 
-
+        pizzaiolo1.mostrarCpf();
 
 
         /*  Criando estoque para teste
