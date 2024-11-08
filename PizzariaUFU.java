@@ -1,24 +1,20 @@
 public class PizzariaUFU {
 
     public static void main(String[] args) {
-        
+    
         Funcionario pizzaiolo1 = null;
         Funcionario ajudante1 = null;
 
-
         try {
-            pizzaiolo1 = new Pizzaiolo("Carlos", 201, "123.456.789-10", "Pizzaiolo experiente");
+            pizzaiolo1 = new Pizzaiolo("Carlos", 150, "123.456.789-10", "Pizzaiolo experiente");
+            System.out.println("Pizzaiolo criado com sucesso!");
         } catch (IdPizzaioloInvalidaException e) {
-            System.out.println("Erro: " + e.getMessage());
-        } catch (IdAjudanteInvalidaException e) {
             System.out.println("Erro: " + e.getMessage());
         }
 
         try {
-            // Tentando criar um Ajudante com ID inválido (deve lançar IdAjudanteInvalidoException)
-            ajudante1 = new Ajudante("João", 201, "987.654.321-00", "Ajudante recém contratado");
-        } catch (IdPizzaioloInvalidaException e) {
-            System.out.println("Erro: " + e.getMessage());
+            ajudante1 = new Ajudante("João", 250, "987.654.321-00", "Ajudante recém contratado");
+            System.out.println("Ajudante criado com sucesso!");
         } catch (IdAjudanteInvalidaException e) {
             System.out.println("Erro: " + e.getMessage());
         }
@@ -47,6 +43,7 @@ public class PizzariaUFU {
         // pizzaiolo1.
 
         pizzaiolo1.mostrarCpf();
+        ajudante1.mostrarCpf();
 
 
         /*  Criando estoque para teste

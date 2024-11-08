@@ -2,9 +2,11 @@ public class Ajudante extends Funcionario {
 
     public int xp;
 
-    public Ajudante(String nome, int id, String cpf, String descricao) throws IdPizzaioloInvalidaException, IdAjudanteInvalidaException {
+    public Ajudante(String nome, int id, String cpf, String descricao) throws IdAjudanteInvalidaException {
         super(nome, id, cpf, descricao);
-
+        if (id < 200 || id >= 300) {
+            throw new IdAjudanteInvalidaException("ID de Ajudante inválido. A ID deve estar entre 200 e 299.");
+        }
     }
 
 

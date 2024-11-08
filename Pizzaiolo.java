@@ -1,8 +1,10 @@
 public class Pizzaiolo extends Funcionario {
 
-    public Pizzaiolo(String nome, int id, String cpf, String descricao) throws IdPizzaioloInvalidaException, IdAjudanteInvalidaException {
-        super(nome, id, cpf, descricao);       
-
+    public Pizzaiolo(String nome, int id, String cpf, String descricao) throws IdPizzaioloInvalidaException {
+        super(nome, id, cpf, descricao);
+        if (id < 100 || id >= 200) {
+            throw new IdPizzaioloInvalidaException("ID de Pizzaiolo inválido. A ID deve estar entre 100 e 199.");
+        }
     }
 
 

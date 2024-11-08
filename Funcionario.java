@@ -6,30 +6,11 @@ public class Funcionario {
     private String descricao;
     
 
-    public Funcionario(String nome, int id, String cpf, String descriçao) throws IdPizzaioloInvalidaException, IdAjudanteInvalidaException{
+    public Funcionario(String nome, int id, String cpf, String descricao) {
         this.nome = nome;
-
-        // If para determinar que a ID de pizzaiolo está como queremos
-         
-        if(this instanceof Pizzaiolo) {
-            if(id - 100 > 100) {
-                throw new IdPizzaioloInvalidaException("ID de Pizzaiolo inválida. A ID deve começar com '1'.");
-            } else {
-                this.id = id;
-            }
-        }
-
-        // If para determinar que a ID de ajudante está como queremos
-        
-        if(this instanceof Ajudante) {
-            if(id - 100 < 100) {
-                throw new IdAjudanteInvalidaException("ID de Ajudante inválido. A ID deve começar com '2'.");
-            } else {
-                this.id = id;
-            }
-        }
+        this.id = id;
         this.cpf = cpf;
-        this.descricao = descriçao;
+        this.descricao = descricao;
     }
     
 
