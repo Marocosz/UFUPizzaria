@@ -50,15 +50,27 @@ public class Pedido {
 
     public void criandoPizzas() {
 
-        List<Pizza> pizzasMetodo = new ArrayList<>();
+
 
         for(int i =0; i < nPizzas.length; i = i + 1){
-            Pizza pizza = new Pizza(this.getId(), nPizzas[i]);
-            pizzasMetodo.add(pizza);
+            
 
+            switch (nPizzas[i]) {
+                case 1:
+                    Pizza pizza = new FrangoCatupiry(this.getId(), nPizzas[i]);
+                    pizzas.add(pizza);
+                case 2:
+                    Pizza pizza2 = new QuatroQueijos(this.getId(), nPizzas[i]);
+                    pizzas.add(pizza2);
+                case 3:
+                    Pizza pizza3 = new Marguerita(this.getId(), nPizzas[i]);
+                    pizzas.add(pizza3);
+            }
         }
 
-        this.pizzas = pizzasMetodo;
+        
+
+
     }
 
     public void printPizzasPedido() {
