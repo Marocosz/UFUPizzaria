@@ -62,15 +62,15 @@ public class Pedido {
 
     public void criandoPizzas() {
 
-        List<Pizza> pizzas = new ArrayList<>();
+        List<Pizza> pizzasMetodo = new ArrayList<>();
 
         for(int i =0; i < nPizzas.length; i = i + 1){
             Pizza pizza = new Pizza(this.getId(), nPizzas[i]);
-            pizzas.add(pizza);
+            pizzasMetodo.add(pizza);
 
         }
 
-        this.pizzas = pizzas;
+        this.pizzas = pizzasMetodo;
     }
 
     public void printPizzasPedido() {

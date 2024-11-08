@@ -68,7 +68,7 @@ public class PizzariaUFU {
         Ingredientes ing2 = new Ingredientes("Queijo", 200);
         ing1.mostrarEstoque();
 
-        
+    
         p1.printPizzasPedido();
 
     }
