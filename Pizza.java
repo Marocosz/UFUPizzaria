@@ -5,8 +5,8 @@ public class Pizza {
 
     public int pNumPedido;
     public int pNumPizza;
-    public List<Estoque> ingredientes = new ArrayList<>();
-
+    public List<Ingredientes> ingredientes = new ArrayList<>();
+    public ControleEstoque controller = new ControleEstoque(); 
     int status = 0;
 
     public Pizza (int numPedido, int numPizza) {
@@ -21,13 +21,28 @@ public class Pizza {
     }
 
     
-    public void adiciona_ingrediente(Estoque novo){
-        ingredientes.add(novo);
+    public void adiciona_ingrediente(Ingredientes novo){
+        controller.carregarEstoque("Estoque_08_11");
+        int disponivel = controller.usarIngrediente(novo);
+        if (disponivel == 0){
+            ingredientes.add(novo);
+        }
+        controller.salvarEstoque("Estoque_08_11");
     }
 
     public void mostraStatus() {
+        if (status == 0){
+            System.out.println("O status da pizza " + pNumPizza + " é: montada");
+        }
+        else if (status == 1){
+            System.out.println("O status da pizza " + pNumPizza + " é: assada");
+        }
+        else if (status == 2){
+            System.out.println("O status da pizza " + pNumPizza + " é: entregue");
+        }
         
-    }
+        }
+    
 
 
     public void attStatus(int valor) {

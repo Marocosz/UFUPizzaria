@@ -16,7 +16,7 @@ public class Funcionario {
 
     public void entregarPizza(Pedido nPedido, int index) {
         for (int i = 0; i < nPedido.pizzas.size(); i = i + 1) {
-            if (i == index) {
+            if (i <= index) {
                 if (nPedido.pizzas.get(i).status == 1) {
                     System.out.println("A pizza: " + nPedido.pizzas.get(i) + "do pedido: " + nPedido.getId() + "Está entregue");
                     nPedido.pizzas.get(i).attStatus(2);
@@ -51,7 +51,7 @@ public class Funcionario {
 
 
     public void mostrarCpf(){
-        System.out.println("O CPF de: " + this.nome + "é: " + this.cpf);
+        System.out.println("O CPF de " + this.nome + " é: " + this.cpf);
     }
 
 }

@@ -2,22 +2,21 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Estoque {
+public class ControleEstoque {
 
-    private Object[] qtIngrediente;
-    private static List<Object[]> vIngredientes = new ArrayList<>();
+    private static List<Ingredientes> vIngredientes = new ArrayList<>();
 
-    public Estoque() {
+    public ControleEstoque() {
 
     }
 
-    public void addIngrediente(String nome, int qt) {
+    public void addIngrediente(Ingredientes ing) {
         boolean h = true;
 
         for (int i = 0; i < vIngredientes.size(); i = i + 1) {
 
-            if(vIngredientes.get(i)[0].equals(nome)) {
-                vIngredientes.get(i)[1] = (Integer) vIngredientes.get(i)[1] + qt;
+            if(vIngredientes.get(i).getNome().equals(ing.getNome())) {
+                vIngredientes.get(i).setQtd(vIngredientes.get(i).getQtd() + ing.getQtd());
                 h = false;
                 break;
             }
@@ -25,40 +24,39 @@ public class Estoque {
         }
 
         if (h == true) {
-            this.qtIngrediente = new Object[2];
-            qtIngrediente[0] = nome;
-            qtIngrediente[1] = qt;
-            vIngredientes.add(qtIngrediente);
+            Ingredientes ingrediente = new Ingredientes(ing.getNome(), ing.getQtd());
+            vIngredientes.add(ingrediente);
         }
 
     }
 
 
-    public List<Object[]> getEstoque() {
+    public List<Ingredientes> getIngredientes() {
         return vIngredientes;
     }
 
 
     // Método para mostrar o estoque
     public void mostrarEstoque() {
-        for (Object[] ingrediente : vIngredientes) {  // Fazendo casting para Object[]
+        for (Ingredientes ingrediente : vIngredientes) {  // Fazendo casting para Object[]
             // Imprimindo nome e quantidade
-            System.out.println("Ingrediente: " + ingrediente[0] + ", Quantidade: " + ingrediente[1]);
+            System.out.println("Ingrediente: " + ingrediente.getNome() + ", Quantidade: " + ingrediente.getQtd());
         }
     }
 
-    public void usarIngrediente(String ingrediente, int quantidadeUsada) {
+    public int usarIngrediente(Ingredientes novo) {
 
+        int flag = 0;
         boolean t = true;
         for (int i = 0; i < vIngredientes.size(); i = i + 1) {
-
-            if (vIngredientes.get(i)[0] == ingrediente) {
-
-                if ((Integer) vIngredientes.get(i)[1] >= quantidadeUsada) {
-                    vIngredientes.get(i)[1] =  (Integer) vIngredientes.get(i)[1] - quantidadeUsada;
-
+            if (vIngredientes.get(i).getNome().equals(novo.getNome())) {
+                if (vIngredientes.get(i).getQtd() >= novo.getQtd()) {
+                    
+                    vIngredientes.get(i).setQtd(vIngredientes.get(i).getQtd() - novo.getQtd());
+                    flag = 0;
                 } else {
-                    System.out.println("Ingrediente " + vIngredientes.get(i)[0] + " com " + vIngredientes.get(i)[1] + " no estoque. Não foi possível terminar a ação");
+                    System.out.println("Ingrediente " + vIngredientes.get(i).getNome() + " com " + vIngredientes.get(i).getQtd() + " no estoque. Não foi possível terminar a ação");
+                    flag = 1;
                 }
 
                 t = true;
@@ -70,8 +68,10 @@ public class Estoque {
         }
 
         if(t == false) {
-            System.out.println("Esse ingrediente não existe");
+            flag = 2;
         }
+
+        return flag;
     }
 
     // Método para salvar o estoque em um arquivo CSV
@@ -81,10 +81,10 @@ public class Estoque {
         try (FileWriter writer = new FileWriter(filePath)) {
 
             // Para cada item da ArrayList
-            for (Object[] ingrediente : vIngredientes) {
+            for (Ingredientes ingrediente : vIngredientes) {
 
                 // escrever linha no arquivo
-                String linha = ingrediente[0] + "," + ingrediente[1] + "\n";
+                String linha = ingrediente.getNome() + "," + ingrediente.getQtd() + "\n";
                 writer.write(linha);
             }
 
@@ -95,6 +95,7 @@ public class Estoque {
         } catch (IOException e) {
             System.out.println("Erro ao salvar o estoque: " + e.getMessage());
         }
+        
     }
 
 
@@ -117,9 +118,7 @@ public class Estoque {
                 int quantidade = Integer.parseInt(dados[1]); // Convertendo string para int
 
                 // Alocando os dados na ArrayList
-                Object[] ingrediente = new Object[2];
-                ingrediente[0] = nome;
-                ingrediente[1] = quantidade;
+                Ingredientes ingrediente = new Ingredientes(nome, quantidade);
                 vIngredientes.add(ingrediente);
             }
 

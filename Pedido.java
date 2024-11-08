@@ -21,6 +21,10 @@ public class Pedido {
     public int[] getPizzas() {
         return nPizzas;
     }
+
+    public List<Pizza> getPizzasArray(){
+        return pizzas;
+    }
     
 
     public int getQuantidade() {

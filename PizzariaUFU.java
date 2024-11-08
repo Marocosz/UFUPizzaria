@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class PizzariaUFU {
 
     public static void main(String[] args) {
@@ -25,11 +27,11 @@ public class PizzariaUFU {
         Forno forno2 = new Forno("Forno do lado direito da entrada");
 
 
-        Pedido p1 = new Pedido(2, 2, 2);
+        Pedido p1 = new Pedido(2,2,2 );
         Pedido p2 = new Pedido(1, 3);
         Pedido p3 = new Pedido(1);
 
-        Estoque estoque1211 = new Estoque();
+        ControleEstoque estoque1211 = new ControleEstoque();
 
         estoque1211.carregarEstoque("Estoque_08_11");
         //estoque1211.mostrarEstoque();
@@ -38,6 +40,15 @@ public class PizzariaUFU {
         forno1.ligar();
         forno2.ligar();
 
+        forno1.assar(p3, 1);
+
+        List<Pizza> pizzas_p3 = p3.getPizzasArray();
+        pizzas_p3.get(1).mostraStatus();
+
+        forno2.assar(p1, 3);
+
+        List<Pizza> pizzas_p1 = p1.getPizzasArray();
+        pizzas_p1.get(3).mostraStatus();
 
         // PROBLEMA EM CRIAR FUNCIONARIOS DEVIDO TRY E CATCH QUE É DEVIDO AOS ERROS EXCEPTION
         // pizzaiolo1.
@@ -65,6 +76,7 @@ public class PizzariaUFU {
 
         estoque0811.salvarEstoque("Estoque_08_11");
         */
+
     }
 
 }
