@@ -27,14 +27,14 @@ public class PizzariaUFU {
         Forno forno2 = new Forno("Forno do lado direito da entrada");
 
 
-        Pedido p1 = new Pedido(2,2,2 );
-        Pedido p2 = new Pedido(1, 3);
+        Pedido p1 = new Pedido(1,2,1 );
+        Pedido p2 = new Pedido(1,3);
         Pedido p3 = new Pedido(1);
 
         ControleEstoque estoque1211 = new ControleEstoque();
 
         estoque1211.carregarEstoque("Estoque_08_11");
-        //estoque1211.mostrarEstoque();
+       
 
         fogao1.ligar();
         forno1.ligar();
@@ -43,23 +43,31 @@ public class PizzariaUFU {
         forno1.assar(p3, 1);
 
         List<Pizza> pizzas_p3 = p3.getPizzasArray();
-        pizzas_p3.get(1).mostraStatus();
 
-        forno2.assar(p1, 3);
+        forno2.assar(p1, 2);
 
         List<Pizza> pizzas_p1 = p1.getPizzasArray();
-        pizzas_p1.get(3).mostraStatus();
+        if (!pizzas_p3.isEmpty()) {
+            pizzas_p3.get(0).mostraStatus();
+        } else {
+            System.out.println("O pedido 3 não contém pizzas.");
+        }
 
-        // PROBLEMA EM CRIAR FUNCIONARIOS DEVIDO TRY E CATCH QUE É DEVIDO AOS ERROS EXCEPTION
-        // pizzaiolo1.
+        if (!pizzas_p3.isEmpty()) {
+            pizzas_p1.get(2).mostraStatus();
+        } else {
+            System.out.println("O pedido 3 não contém pizzas.");
+        }
+        
+
 
         pizzaiolo1.mostrarCpf();
         ajudante1.mostrarCpf();
 
 
-        /*  Criando estoque para teste
+        /*  Criando estoque para teste(exemplo de criação e definição dos valores no estoque)
         
-        Estoque estoque0811 = new Estoque();
+        ControleEstoque estoque0811 = new ControleEstoque();
 
         estoque0811.addIngrediente("Frango Desfiado", 1000);
         estoque0811.addIngrediente("Queijo Mussarela", 1000);

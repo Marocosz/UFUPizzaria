@@ -61,12 +61,15 @@ public class Pedido {
                 case 1:
                     Pizza pizza = new FrangoCatupiry(this.getId(), nPizzas[i]);
                     pizzas.add(pizza);
+                    break;
                 case 2:
                     Pizza pizza2 = new QuatroQueijos(this.getId(), nPizzas[i]);
                     pizzas.add(pizza2);
+                    break;
                 case 3:
                     Pizza pizza3 = new Marguerita(this.getId(), nPizzas[i]);
                     pizzas.add(pizza3);
+                    break;
             }
         }
 
