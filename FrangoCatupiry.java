@@ -6,6 +6,8 @@ public class FrangoCatupiry extends Pizza {
     Ingredientes frango = new Ingredientes("Frango Desfiado", 500);
     Ingredientes catupiry = new Ingredientes("Queijo Catupiry", 200);
     Ingredientes milho = new Ingredientes("Milho Verde", 500);  // Ingrediente não usado nesta versão
+    Ingredientes massa = new Ingredientes("Massa", 200);            // Massa com quantidade de 200g
+    Ingredientes molhoTomate = new Ingredientes("Molho Tomate", 200); // Molho de tomate com quantidade de 200g
 
     // Construtor da classe FrangoCatupiry, que aceita o número do pedido e o número da pizza como parâmetros.
     public FrangoCatupiry(int numPedido, int numPizza) {
@@ -15,7 +17,9 @@ public class FrangoCatupiry extends Pizza {
         // Adiciona os ingredientes principais da pizza FrangoCatupiry ao pedido.
         adiciona_ingrediente(frango);
         adiciona_ingrediente(catupiry);
+        adiciona_ingrediente(milho);
+        adiciona_ingrediente(massa);
+        adiciona_ingrediente(molhoTomate);
         
-        // Nota: o ingrediente "milho" é definido, mas não é adicionado ao pedido neste código.
     }
 }

@@ -13,9 +13,6 @@ public class Forno extends Equipamento {
     public void assar(Pedido pedido, int quantidade) {
         // Obtém a lista de pizzas do pedido.
         List<Pizza> pizzas = pedido.getPizzasArray();
-        
-        // Exibe o tamanho da lista de pizzas (quantidade total de pizzas no pedido).
-        System.out.println(pizzas.size());
 
         Pizza pizza = null;  // Declaração de uma variável para armazenar a pizza atual.
 

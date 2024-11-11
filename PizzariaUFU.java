@@ -8,7 +8,7 @@ public class PizzariaUFU {
         Funcionario ajudante1 = null;
 
         try {
-            pizzaiolo1 = new Pizzaiolo("Carlos", 150, "123.456.789-10", "Pizzaiolo experiente");
+            pizzaiolo1 = new Pizzaiolo("Carlos", 250, "123.456.789-10", "Pizzaiolo experiente");
             System.out.println("Pizzaiolo criado com sucesso!");
         } catch (IdPizzaioloInvalidaException e) {
             System.out.println("Erro: " + e.getMessage());
@@ -53,10 +53,10 @@ public class PizzariaUFU {
             System.out.println("O pedido 3 não contém pizzas.");
         }
 
-        if (!pizzas_p3.isEmpty()) {
+        if (!pizzas_p1.isEmpty()) {
             pizzas_p1.get(2).mostraStatus();
         } else {
-            System.out.println("O pedido 3 não contém pizzas.");
+            System.out.println("O pedido 1 não contém pizzas.");
         }
         
 
